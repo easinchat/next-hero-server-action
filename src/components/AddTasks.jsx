@@ -11,11 +11,15 @@ import {
   ListBox,
   Select,
 } from "@heroui/react";
+import Link from "next/link";
 
 export function AddTasks({ createATask }) {
   return (
     <Modal>
       <Button variant="secondary">Add a Tasks</Button>
+      <Link href="/tasks/new">
+        <Button variant="secondary">Add Task</Button>
+      </Link>
       <Modal.Backdrop>
         <Modal.Container placement="auto">
           <Modal.Dialog className="sm:max-w-md">
@@ -114,7 +118,9 @@ export function AddTasks({ createATask }) {
                     <Button slot="close" variant="secondary">
                       Cancel
                     </Button>
-                    <Button type="submit">Submit Tasks</Button>
+                    <Button slot="close" type="submit">
+                      Submit Tasks
+                    </Button>
                   </Modal.Footer>
                 </form>
               </Surface>
